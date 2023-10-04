@@ -27,3 +27,5 @@ test('Print ignores additional values if they are provided.', () => {
 
     expect(logSpy).toHaveBeenCalledWith('header -- text');
 });
+
+// Thanks to this answer for showing me about console.log testing. https://stackoverflow.com/questions/49096093/how-do-i-test-a-jest-console-log
