@@ -1,24 +1,66 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>What's In My Freezer?</title>
-<script src="index.js" type="module"></script>
+    <title>What's In My Freezer?</title>
+    <script src="index.js" type="module"></script>
 
 </head>
 
 <body>
-<canvas id="gamearea" width="900" height="450" style="border:1px solid #000000;">
-
-</canvas>
 
 
-<script>
-    var c = document.getElementById("gamearea");
-    var ctx = c.getContext("2d");
-    ctx.beginPath();
-    ctx.arc(95, 50, 40, 0, 2 * Math.PI);
-    ctx.stroke();
-</script>
+
+    <div class="">
+        <svg width="500" height="500">
+            <circle id='circle1' cx="250" cy="250" r="40" stroke="green" stroke-width="4" fill="yellow" />
+        </svg>
+    </div>
+
+    <div id="position"></div>
+    <button onclick="set_direction(-1);">Left</button>
+    <button onclick="set_direction(1);">Right</button>
+    <button onclick="set_direction(0);">Stop</button>
+
+   <!-- <canvas id="gamearea" width="900" height="450" style="border:1px solid #000000;" style="display: none;">
+
+    </canvas>-->
+
+    <script>
+        var c = document.getElementById("gamearea");
+        var ctx = c.getContext("2d");
+        for (let x = 95; x < 195; x++) {
+            ctx.restore();
+            ctx.beginPath();
+            ctx.arc(x, 50, 40, 0, 2 * Math.PI);
+            ctx.stroke();
+        }
+
+        for (let i = 0; i < 100; i++) {
+            setTimeout(() => {}, 1000)
+            left = [];
+            right = [];
+
+            for (let cx = 100; cx < 400; cx++) {
+                setTimeout(() => {}, 1000)
+                document.getElementById('circle1').setAttribute('cx', cx);
+                left.push(cx);
+            }
+            console.log(left);
+
+            // for (let cx = 400; cx > 100; cx--) {
+            //     setTimeout(() => {}, 1000)
+            //     document.getElementById('circle1').setAttribute('cx', cx);
+            //     right.push(cx);
+            // }
+            // console.log(right);
+        }
+
+    </script>
+
+
+
 
 </body>
+
 </html>

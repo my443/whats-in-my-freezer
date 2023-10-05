@@ -15,4 +15,6 @@ function setDirection(direction){
     return returnValue;
 }
 
-// module.exports = {move, setDirection};
+if (typeof window === 'undefined') {
+    module.exports = {move, setDirection};
+}
