@@ -27,35 +27,20 @@
     </canvas>-->
 
     <script>
-        var c = document.getElementById("gamearea");
-        var ctx = c.getContext("2d");
-        for (let x = 95; x < 195; x++) {
-            ctx.restore();
-            ctx.beginPath();
-            ctx.arc(x, 50, 40, 0, 2 * Math.PI);
-            ctx.stroke();
+        function set_direction(direction){
+            position = document.getElementById('circle1').getAttribute('cx');
+            document.getElementById('circle1').setAttribute('cx',  parseInt(position) + direction);
+            document.getElementById("position").innerHTML = parseInt(position) + direction;
         }
 
-        for (let i = 0; i < 100; i++) {
-            setTimeout(() => {}, 1000)
-            left = [];
-            right = [];
-
-            for (let cx = 100; cx < 400; cx++) {
-                setTimeout(() => {}, 1000)
-                document.getElementById('circle1').setAttribute('cx', cx);
-                left.push(cx);
-            }
-            console.log(left);
-
-            // for (let cx = 400; cx > 100; cx--) {
-            //     setTimeout(() => {}, 1000)
-            //     document.getElementById('circle1').setAttribute('cx', cx);
-            //     right.push(cx);
-            // }
-            // console.log(right);
-        }
-
+        document.onkeypress = function (e) {
+    e = e || window.event;
+    if (e.keyCode == 97){
+        set_direction(-1);  
+    }
+    console.log(e.keyCode);
+    // use e.keyCode
+};
     </script>
 
 
