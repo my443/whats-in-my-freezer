@@ -15,6 +15,9 @@ function setDirection(direction){
     return returnValue;
 }
 
+
 if (typeof window === 'undefined') {
+    // If the window is defined, then it is being used on the web. 
+    // Otherwise, do the exports so that you can do testing, ect. 
     module.exports = {move, setDirection};
 }
